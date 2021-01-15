@@ -1,0 +1,1 @@
+# snapcheck-devops-gradle-jenkins-ansible
