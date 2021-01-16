@@ -1,8 +1,5 @@
 pipeline {
-  environment {
-  
-}
-	agent any
+ 	agent any
 	stages {
 		stage('install gradle and upgrade gradlew'){
 			steps {
