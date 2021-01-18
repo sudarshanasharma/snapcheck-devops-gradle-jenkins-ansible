@@ -1,9 +1,11 @@
 ---
 - name: "Build Jenkins Pipeline with gradle"
+  become: yes
   shell: |
-      ssh -l palki -p 53801 localhost build gradlepipe
+      ssh -l palki -p 53801 54.202.118.167 build gradlepipe
       
- - name: "Build Jenkins Pipeline with gradle"
+- name: "Print Console output of Jenkins Pipeline"
+  become: yes
   shell: |
-      ssh -l palki -p 53801 localhost console gradlepipe
+      ssh -l palki -p 53801 54.202.118.167 console gradlepipe
        
