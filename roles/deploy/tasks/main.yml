@@ -2,10 +2,10 @@
 - name: "Build Jenkins Pipeline with gradle"
   become: yes
   shell: |
-      ssh -l snapcheck -p 53801 ip-172-31-2-218 build gradlepipe
+      ssh -l snapcheck -p 53801 34.223.248.132 build gradlepipe
       
 - name: "Print Console output of Jenkins Pipeline"
   become: yes
   shell: |
-      ssh -l snapcheck -p 53801 ip-172-31-2-218 console gradlepipe
+      ssh -l snapcheck -p 53801 34.223.248.132 console gradlepipe
        
