@@ -1,6 +1,14 @@
 ---
+- name: Install the package "jq"
+  become: yes
+  apt:
+    name: jq
+
 
 - name: "Build Jenkins Pipeline with gradle"
-  become: yes
   shell: |
-      BUILD_STATUS=$(curl --user snapcheck:snapcheck --silent 34.216.71.67:8080/job/gradlepipe/build?token=palki123/api/json )
+      curl --user snapcheck:snapcheck --silent 34.216.71.67:8080/job/gradlepipe/build
+
+- name: "Get the conmsle output"
+  shell: |
+         curl --user snapcheck:snapcheck -s  34.216.71.67:8080/job/gradlepipe/lastBuild/consoleText
