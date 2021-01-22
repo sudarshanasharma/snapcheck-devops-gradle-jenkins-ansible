@@ -1,11 +1,6 @@
 ---
+
 - name: "Build Jenkins Pipeline with gradle"
   become: yes
   shell: |
-      ssh -l snapcheck -p 53801 34.223.248.132 build gradlepipe
-      
-- name: "Print Console output of Jenkins Pipeline"
-  become: yes
-  shell: |
-      ssh -l snapcheck -p 53801 34.223.248.132 console gradlepipe
-       
+      BUILD_STATUS=$(curl --user snapcheck:snapcheck --silent 34.216.71.67:8080/job/gradlepipe/build?token=palki123/api/json )

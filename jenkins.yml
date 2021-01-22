@@ -2,6 +2,6 @@
 - name: install
   become: true
   hosts: all
-  user: ubuntu
+  user: root
   roles:
     - deploy
