@@ -1,4 +1,4 @@
-node("main") {
+node("node0") {
 	stages {
 		
 		stage('install gradle and upgrade gradlew'){
