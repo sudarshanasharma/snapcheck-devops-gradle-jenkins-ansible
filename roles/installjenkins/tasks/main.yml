@@ -1,0 +1,7 @@
+---
+- name: Run docker to install jenkins
+  become: yes
+  shell: |
+    docker build -t jenkins-casc .
+    docker run --rm --name jenkins-casc -p 8080:8080 jenkins-casc 
+  

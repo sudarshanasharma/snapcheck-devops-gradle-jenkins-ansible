@@ -1,0 +1,23 @@
+jenkins: 
+  securityRealm: 
+    local: 
+      allowsSignup: false 
+      users: 
+        - id: "admin"
+          password: "admin"
+        - id: "snapcheck"
+          password: "snapcheck"
+  authorizationStrategy: 
+    globalMatrix: 
+      permissions: 
+        - "Job/Build:snapcheck"
+        - "Job/Cancel:snapcheck"
+        - "Job/Read:snapcheck"
+        - "Job/Workspace:snapcheck"
+        - "Overall/Administer:admin"
+        - "Overall/Read:authenticated"
+        - "Run/Replay:snapcheck"
+        - "Run/Update:snapcheck"
+  numExecutors: 3​
+jobs: 
+  - file: /usr/local/seedjob.groovy

@@ -1,10 +1,4 @@
 ---
-- name: Install the package "jq"
-  become: yes
-  apt:
-    name: jq
-
-
 - name: "Build Jenkins Pipeline with gradle"
   shell: |
       curl --user snapcheck:snapcheck --silent localhost:8080/job/gradlepipe/build
