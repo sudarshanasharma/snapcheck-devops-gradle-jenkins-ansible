@@ -1,7 +1,19 @@
 ---
-- name: Run docker to install jenkins
+- name: Install docker
   become: yes
+  pip:
+    name: docker
+    
+- name: Log into DockerHub
+  become: no
+  docker_login:
+    registry:  index.docker.io
+    username:  sudarshanas 
+    password:  Palki@12345 
+    email: sudarshana.sharma7@gmail.com
+    
+- name: Build docker to install jenkins
+  become: no
   shell: |
-    docker build -t jenkins-casc .
-    docker run --rm --name jenkins-casc -p 8080:8080 jenkins-casc 
-  
+    docker build -t jenkins-casc roles/installjenkins/files/.
+    docker run -p 8080:8080 -d jenkins-casc:latest
