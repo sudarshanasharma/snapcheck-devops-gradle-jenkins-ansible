@@ -1,4 +1,5 @@
 jenkins: 
+  numExecutors: 2
   securityRealm: 
     local: 
       allowsSignup: false 
@@ -18,6 +19,11 @@ jenkins:
         - "Overall/Read:authenticated"
         - "Run/Replay:snapcheck"
         - "Run/Update:snapcheck"
-  numExecutors: 3​
+tool:
+ gradle:
+  installations:
+   - name: gradle
+     home: /usr/bin/gradle
+
 jobs: 
   - file: /usr/local/seedjob.groovy
