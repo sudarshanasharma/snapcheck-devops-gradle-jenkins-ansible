@@ -16,7 +16,7 @@ jenkins:
         - "Job/Read:snapcheck"
         - "Job/Workspace:snapcheck"
         - "Overall/Administer:admin"
-        - "Overall/Read:authenticated"
+        - "Overall/Read:anonymous"
         - "Run/Replay:snapcheck"
         - "Run/Update:snapcheck"
 tool:
