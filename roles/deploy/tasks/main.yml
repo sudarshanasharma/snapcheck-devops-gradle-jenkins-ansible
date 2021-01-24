@@ -7,8 +7,8 @@
 
 - name: "Build Jenkins Pipeline with gradle"
   shell: |
-      curl --user snapcheck:snapcheck --silent 34.216.71.67:8080/job/gradlepipe/build
+      curl --user snapcheck:snapcheck --silent localhost:8080/job/gradlepipe/build
 
 - name: "Get the conmsle output"
   shell: |
-         curl --user snapcheck:snapcheck -s  34.216.71.67:8080/job/gradlepipe/lastBuild/consoleText
+         curl --user snapcheck:snapcheck -s  localhost:8080/job/gradlepipe/lastBuild/consoleText
