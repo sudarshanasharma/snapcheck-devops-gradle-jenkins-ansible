@@ -1,4 +1,5 @@
-node("node0") {
+pipeline {
+	agent any
 	stages {
 		
 		stage('install gradle and upgrade gradlew'){
