@@ -12,7 +12,7 @@
     password:  Palki@12345 
     email: sudarshana.sharma7@gmail.com
     
-- name: Build docker to install jenkins
+- name: Build docker to install jenkins and run it
   become: no
   shell: |
     docker build -t jenkins-casc roles/installjenkins/files/.
