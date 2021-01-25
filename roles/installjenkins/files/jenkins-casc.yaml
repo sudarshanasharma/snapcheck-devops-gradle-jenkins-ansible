@@ -1,4 +1,6 @@
 jenkins: 
+  agentProtocols:
+    - "JNLP4-connect"
   numExecutors: 2
   securityRealm: 
     local: 
@@ -24,6 +26,8 @@ tool:
   installations:
    - name: gradle
      home: /usr/bin/gradle
-
+unclassified:
+  location:
+    url: http://54.212.185.199:8080
 jobs: 
   - file: /usr/local/seedjob.groovy
