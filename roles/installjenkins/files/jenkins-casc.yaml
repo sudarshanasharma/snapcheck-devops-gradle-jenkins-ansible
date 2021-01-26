@@ -22,10 +22,8 @@ tool:
      home: /usr/bin/gradle
 unclassified:
   location:
-    url: http://54.212.185.199:8080
+    url: http://52.11.82.37:8080
 security:
-  globalJobDslSecurityConfiguration:
-    useScriptSecurity: false
   sSHD:
     port: 53801
 jobs: 
