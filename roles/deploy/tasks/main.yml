@@ -1,12 +1,14 @@
 ---
-- name: Pause for 1 minute for jenkins to start
-  pause:
-    minutes: 1
-    
 - name: "Build Jenkins Pipeline with gradle"
   shell: |
-      curl --user snapcheck:snapcheck --silent 0.0.0.0:8080/job/gradlepipe/build
+      ssh -l snapcheck -p 53801 localhost build gradlepipe   
+      
+  
+- name: Pause for 5 seconds for build to be over
+  pause:
+    seconds: 5
+    
 
 - name: "Get the console output"
   shell: |
-         curl --user snapcheck:snapcheck -s  0.0.0.0:8080/job/gradlepipe/lastBuild/consoleText
+         ssh -l snapcheck -p 53801 localhost console gradlepipe   
