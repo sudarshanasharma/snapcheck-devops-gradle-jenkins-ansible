@@ -11,7 +11,7 @@ sudo apt install gradle
 
 sudo apt install ansible
 
-
+In roles/installjenkins/files/jenkinscasc.yml provide the SSH public key from ~/.SSH/id_rsa.pub
 
 To build the project, please execute the followwing command:
 
