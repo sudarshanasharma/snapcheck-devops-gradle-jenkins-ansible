@@ -10,17 +10,11 @@ jenkins:
           password: "admin"
         - id: "snapcheck"
           password: "snapcheck"
-  authorizationStrategy: 
-    globalMatrix: 
-      permissions: 
-        - "Job/Build:snapcheck"
-        - "Job/Cancel:snapcheck"
-        - "Job/Read:snapcheck"
-        - "Job/Workspace:snapcheck"
-        - "Overall/Administer:admin"
-        - "Overall/Read:anonymous"
-        - "Run/Replay:snapcheck"
-        - "Run/Update:snapcheck"
+          properties:
+            - sshPublicKey: 
+                authorizedKeys: |
+                  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDRj2ivJFqK4QHcoVYxIPFNVJf9k7Zw8vcu0uNt8M+Bj4DeW2QEDEVxqsJZYMOS3/XqR73cMGB80rCEQRMvZrCF2uPLN3bl0EU18HvZlREZQHUFHYb9u8sWNQpEk7R593XwKO7/8JoZpUONfAIHt2IiNHJFCHj6ISDhA9/mHuXAN8QTyTS+YE2At4pi/rM8KOBy35V7GHEKQzeWx4Jb+FoDs0ljR/ha4sQdBUlaUvtz5bYzee2SVsyDkmWflUUmXUt0IFePXaQ0mysNjngwu28l2IX0JuKjpNhlVNidJ/F5Yvxo+K5Ywg/sVAMVG9Mtz4ulrDhVf+v2+DJUi9mVyisT ubuntu@ip-172-31-2-120
+  authorizationStrategy: loggedInUsersCanDoAnything
 tool:
  gradle:
   installations:
@@ -29,5 +23,10 @@ tool:
 unclassified:
   location:
     url: http://54.212.185.199:8080
+security:
+  globalJobDslSecurityConfiguration:
+    useScriptSecurity: false
+  sSHD:
+    port: 53801
 jobs: 
   - file: /usr/local/seedjob.groovy
