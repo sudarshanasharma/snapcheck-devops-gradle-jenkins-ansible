@@ -6,6 +6,7 @@
     
 - name: "Build Jenkins Pipeline with gradle"
   become: yes
+  become_user: ubuntu
   command: ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -l snapcheck -p 53801 localhost build gradlepipe
   ignore_errors: yes
       
@@ -17,6 +18,7 @@
 
 - name: "Get the console output"
   become: yes
+  become_user: ubuntu
   shell: |
          ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -l snapcheck -p 53801 localhost console gradlepipe 
   ignore_errors: yes
