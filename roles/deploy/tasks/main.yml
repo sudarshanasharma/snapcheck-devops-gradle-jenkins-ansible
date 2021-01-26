@@ -1,14 +1,22 @@
 ---
+
+- name: Pause for 1 min till container is up and running
+  pause:
+    minutes: 1
+    
 - name: "Build Jenkins Pipeline with gradle"
-  shell: |
-      ssh -l snapcheck -p 53801 localhost build gradlepipe   
+  become: yes
+  command: ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -l snapcheck -p 53801 localhost build gradlepipe
+  ignore_errors: yes
       
   
-- name: Pause for 5 seconds for build to be over
+- name: Pause for 15 seconds for build to be over
   pause:
-    seconds: 5
+    seconds: 15
     
 
 - name: "Get the console output"
+  become: yes
   shell: |
-         ssh -l snapcheck -p 53801 localhost console gradlepipe   
+         ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -l snapcheck -p 53801 localhost console gradlepipe 
+  ignore_errors: yes
