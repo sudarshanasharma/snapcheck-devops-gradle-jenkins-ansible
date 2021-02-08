@@ -11,7 +11,7 @@
 
     sudo apt install ansible
 
-3. In roles/installjenkins/files/jenkinscasc.yml provide the SSH public key from ~/.SSH/id_rsa.pub
+3. In roles/installjenkins/files/jenkinscasc.yml provide the SSH public key from ~/.SSH/id_rsa.pub . You might need to generate the SSH public and private keys in this path (ssh-keygen -t rsa)
 
 4. To build the project, please execute the followwing command:
 
