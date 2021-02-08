@@ -15,4 +15,4 @@
 
 4. To build the project, please execute the followwing command:
 
-    ansible-playbook -i inventory jenkins.yml -vvvv
+    ansible-playbook -i inventory jenkins.yml -vv
