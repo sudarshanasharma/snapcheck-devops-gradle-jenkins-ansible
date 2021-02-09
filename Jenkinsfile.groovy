@@ -6,7 +6,7 @@ pipeline {
 			steps {
 					gradle{
 						 useWrapper true
-				         sh 'gradle wrapper --gradle-version 6.6.1'
+				         sh 'gradle wrapper --gradle-version 6.8.2'
 					}
 			}
 		}
