@@ -21,6 +21,6 @@ COPY jenkins-casc.yaml /usr/local/jenkins-casc.yaml
 # tell the jenkins config-as-code plugin where to find the yaml file
 ENV CASC_JENKINS_CONFIG /usr/local/jenkins-casc.yaml
 # copy the config-as-code yaml file into the image
-COPY jenkins-casc.yaml /usr/local/jenkins-casc.yaml
+#COPY jenkins-casc.yaml /usr/local/jenkins-casc.yaml
 # tell the jenkins config-as-code plugin where to find the yaml file
 ENV CASC_JENKINS_CONFIG /usr/local/jenkins-casc.yaml
