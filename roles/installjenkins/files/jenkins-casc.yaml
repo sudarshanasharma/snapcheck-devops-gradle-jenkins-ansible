@@ -2,7 +2,7 @@ jenkins:
   agentProtocols:
   ## How jenkins controller and agent (master-slave) communicate
     - "JNLP4-connect"
-  ## Number of processes available to controller
+  ## no. of executers in nothing but no. of jobs that this controller/slave can run parallely 
   numExecutors: 2
   securityRealm: 
     local: 
